@@ -1,7 +1,9 @@
 
 
 
-
+var getUserRepos = function (user) {
+    var apiUrl = 'https://api.github.com/users/' + user + '/repos';
+  
 var formSubmitHandler = function (event) {
     event.preventDefault();
     var destination = nameInputEl.value.trim();
