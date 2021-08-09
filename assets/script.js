@@ -1,10 +1,13 @@
-/* var flightTabUrl = "./flightTab.html";
-var error= "./404.html";
-var ButtonFlight = document.querySelector("#");
+var flightTabUrl = "./flight.html";
+//var error= "./404.html";
+var ButtonFlight = document.querySelector("#button-flights");
+var loginEl = document.querySelector("#sign-in");
+var loginForm = document.querySelector("#log-in");
 
-
+/*
 function redirectFlight (event){
     fetch(flightTabUrl).then(function(response){
+
         if (response.status === 404){
             window.location.replace(error);
         } else {
@@ -12,10 +15,22 @@ function redirectFlight (event){
         }
     })
 }
-
-ButtonFlight.addEventListener("click",redirectFlight());
-
 */
+
+ButtonFlight.addEventListener("click",function(){
+    window.location.replace(flightTabUrl)
+})
+console.log(loginForm.style.display);
+
+loginEl.addEventListener("click",function(){
+    if (loginForm.style.display==="none"){
+        loginForm.style.display="";
+    }
+    else if (loginForm.style.display===""){
+        loginForm.style.display="none";
+    } 
+})
+
 
 var slideIndex = 1;
 showSlides(slideIndex);
