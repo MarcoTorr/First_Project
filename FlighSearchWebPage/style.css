@@ -9,10 +9,10 @@ body{
 .container {
     background-color: #000000;
     opacity: 0.7;
-    height: 500px;
-    width: 700px;
+    height: 580px;
+    width: 650px;
     border-radius: 15px;
-    padding: 20px 40px; /* review padding at the end */
+    padding: 8px 40px; /* review padding at the end */
 }
 
 h3{
@@ -31,4 +31,49 @@ h3{
     background: transparent;
     color: rgb(248, 245, 241);
     font-size: 16px;
+}
+
+.age {
+    margin: 8px 40px;
+}
+
+#selector {
+    color: rgb(248, 245, 241);
+    margin: 8px 140px;
+}
+
+#input-box1 {
+    width:615px;
+    margin:5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color:#fff;
+    font-size: 16px;
+}
+
+.btn {
+    margin: 18px 180px;
+}
+
+#btn-1 {
+    height: 40px;
+    width: 135px;
+    font-size: 20px;
+    background: rgb(28, 97, 224);
+    color:#fff;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#btn-2 {
+    height: 40px;
+    width: 135px;
+    font-size: 20px;
+    background: rgb(235, 174, 21);
+    color:#fff;
+    border-radius: 8px;
+    cursor: pointer;
 }

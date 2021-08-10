@@ -7,6 +7,7 @@
     <title>Flight Search</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Flight Booking</h1>
 
@@ -19,7 +20,7 @@
         <input type="text" id="input-box" placeholder="Departure Date">
         <input type="text" id="input-box" placeholder="Departure Time">
         
-        <Select id="input-box">
+        <Select id="input-box" style="background: #000000d0;">
             <option value="">Preffered Airline</option>
             <option value="">Option #1</option>
             <option value="">Option #2</option>
@@ -33,28 +34,37 @@
             <option value="">First Class</option>
         </select>
 
-        <input type="number" placeholder="Adult">
-        <input type="number" placeholder="Children (2-11 years)">
-        <input type="number" placeholder="Infants (under 2 years">
+        <div class="age">
+            <input type="number" placeholder="Adult">
+            <input type="number" placeholder="Children (2-11 years)">
+            <input type="number" placeholder="Infants (under 2 years">
+        </div>
 
-        <span>Select Your Fare</span>
-        <input type="radio" name="r" id="input-group">
-        <label for="input-group">One Way</label>
-        <input type="radio" name="r" id="input-group">
-        <label for="input-group">Round Trip</label>
+        <div id="selector">
+            <span style="color: aqua;">Select Your Fare</span>
+            <input type="radio" name="r" id="input-group">
+            <label for="input-group">One Way</label>
+            <input type="radio" name="r" id="input-group">
+            <label for="input-group">Round Trip</label>
+        </div>
 
-        <input type="text" placeholder="Return Date">
-        <input type="text" placeholder="Return Time">
-        <input type="text" placeholder="Any Message">
+        
+        <input type="text" id="input-box" placeholder="Return Date">
+        <input type="text" id="input-box" placeholder="Return Time">
+        
+        <input type="text" id="input-box1" placeholder="Any Message">
 
         <h3>Personal Details</h3>
 
         <input type="text" id="input-box" placeholder="Full Name">
         <input type="text" id="input-box" placeholder="Phone Number">
-        <input type="text" id="input-box" placeholder="Email">
+        <input type="text" id="input-box1" placeholder="Email">
 
-        <button>Submit Form</button>
-        <button>Clear Form</button>
+        <div class="btn">
+            <button id="btn-1">Submit Form</button>
+            <button id="btn-2">Clear Form</button>
+        </div>
+
     </div>
         
 </body>

@@ -38,3 +38,51 @@ body{
     background: transparent;
     color:#fff
 }
+#input3 #input-group{
+    margin-left: 50px;
+}
+#input4 #input-group{
+    width:300px;
+    margin:5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color:#fff
+}
+#input4 #input-group1{
+    width:615px;
+    margin:5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color:#fff
+}
+#input5 h3{
+    border-bottom: 2px solid #3399ff;
+    width:220px;
+    padding: 5px;
+}
+#input6 #input-group{
+    width:300px;
+    margin:5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color:#fff
+}
+#input6 #input-group1{
+    width:615px;
+    margin:5px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    background: transparent;
+    color:#fff
+}
