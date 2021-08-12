@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flight Search</title>
-    <link rel="stylesheet" href="./style1.css">
+    <link rel="stylesheet" href="./style.css">
    
 </head>
 <body>
@@ -33,14 +33,25 @@
         <div id="form" class="column">
                 <form id="user-form" class="card-body">
                     <h3>Booking Details</h3>
+                    <label class="form-label" for="origin">Origin Country:</label>
+                    <select id="origin-country">
+                        <option value="Mexico">Mexico</option>
+                        <option value="Canada">Canada</option>
+                        <option value="USA">United States of America</option>
+                    </select>
+                    <label class="form-label" for="origin">Destination Country:</label>
+                    <select id="destination-country">
+                        <option value="Mexico">Mexico</option>
+                        <option value="Canada">Canada</option>
+                        <option value="USA">United States of America</option>
+                    </select>
+                    <button id="airport">Find airports</button>
                     <label class="form-label" for="origin">Origin:</label>
-                    <input name="origin" id="origin" type="text" autofocus="true" class="form-input" />
+                    <select id="origin"></select>
                     <label class="form-label" for="destination">Destination:</label>
-                    <input name="destination" id="destination" type="text" autofocus="true" class="form-input" />
+                    <select id="destination"></select>
                     <label class="form-label" for="startDate">From:</label>
                     <input name="startDate" id="startDate" type="date" autofocus="true" class="form-input" />
-                    <label class="form-label" for="endDate">Until:</label>
-                    <input name="endDate" id="endDate" type="date" autofocus="true" class="form-input" />
                     <h3>Personal Details</h3>
                     <input type="text" id="name" placeholder="Full Name">
                     <input type="text" id="phone" placeholder="Phone Number">
@@ -64,6 +75,6 @@
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="./script1.js"></script>    
+    <script src="./script.js"></script>    
 </body>
 </html>

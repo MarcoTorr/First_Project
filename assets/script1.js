@@ -9,9 +9,9 @@ var recentSearchContainer= document.querySelector("#recent-search-container");
 var listRSEl= document.querySelector("#list-rs");
 
 var destinationEl = document.querySelector('#destination');
-var locationEl = document.querySelector('#origin');
+var originEl = document.querySelector('#origin');
+var airportEl = document.querySelector('#airport');
 var startDateEl = document.querySelector('#startDate');
-var endDateEl = document.querySelector('#endDate');
 var nameEl = document.querySelector('#name');
 var phoneEl = document.querySelector('#phone');
 var emailEl = document.querySelector('#email');
@@ -29,79 +29,114 @@ var storedOrigin;
 var storedDestination;
 var storedCurrentDate;
 
+
+function getAirports(event){
+  event.preventDefault();
+  console.log(document.querySelector('#destination-country').value);
+  console.log(document.querySelector('#origin-country').value);
+
+  if(document.querySelector('#origin-country').value === "Mexico") {
+    var listMexico=["Mexico City Juarez International","Mexico City Atizapan","Cancun","Guadalajara","Monterrey","Monterrey Gen Mariano Escobedo","Monterrey Aeropuerto Del Norte","Tijuana"];
+    var listMexicoId=["MEX-sky","AZP-sky","CUN-sky","GDL-sky","MTYA-sky","MTY-sky","NTR-sky","TIJ-sky"];
+    for (i=0;i<9;i++){
+      var optionCC = document.createElement('option');
+      optionCC.textContent =listMexico[i];
+      optionCC.value=listMexicoId[i];
+      originEl.appendChild(optionCC);
+    }
+    
+  }else if(document.querySelector('#origin-country').value === "Canada"){
+    var listCanada=["Toronto","Toronto Pearson International","Hamilton","Toronto Island","Calgary","Vancouver International","Abbotsford"];
+    var listCanadaId=["YTOA-sky","YYZ-sky","YHM-sky","YTZ-sky","YYC-sky","YVR-sky","YXX-sky"];
+    for (i=0;i<8;i++){
+      var optionCC = document.createElement('option');
+      optionCC.value= listCanadaId[i];
+      optionCC.textContent =listCanada[i];
+      originEl.appendChild(optionCC);
+    }
+  }else if(document.querySelector('#origin-country').value === "USA"){
+    var listUsa=["New York","New York John F. Kennedy","Stewart International","Miami International","Los Angeles International","San Francisco International","Boston Logan International"];
+    var listUsaId=["NYCA-sky","JFK-sky","SWF-sky","MIA-sky","LAX-sky","SFO-sky","BOS-sky"];
+    for (i=0;i<8;i++){
+      var optionCC = document.createElement('option');
+      optionCC.textContent =listUsa[i];
+      optionCC.value= listUsaId[i];
+      originEl.appendChild(optionCC);
+    }
+  }
+  if(document.querySelector('#destination-country').value === "Mexico") {
+    var listMexico=["Mexico City Juarez International","Mexico City Atizapan","Cancun","Guadalajara","Monterrey","Monterrey Gen Mariano Escobedo","Monterrey Aeropuerto Del Norte","Tijuana"];
+    var listMexicoId=["MEX-sky","AZP-sky","CUN-sky","GDL-sky","MTYA-sky","MTY-sky","NTR-sky","TIJ-sky"];
+    for (i=0;i<9;i++){
+      var optionC = document.createElement('option');
+      optionC.textContent =listMexico[i];
+      optionC.value= listMexicoId[i];
+      destinationEl.appendChild(optionC);
+     
+    }
+    
+  }else if(document.querySelector('#destination-country').value === "Canada"){
+    var listCanada=["Toronto","Toronto Pearson International","Hamilton","Toronto Island","Calgary","Vancouver International","Abbotsford"];
+    var listCanadaId=["YTOA-sky","YYZ-sky","YHM-sky","YTZ-sky","YYC-sky","YVR-sky","YXX-sky"];
+    for (i=0;i<8;i++){
+      var optionC = document.createElement('option');
+      optionC.value= listCanadaId[i];
+      optionC.textContent =listCanada[i];
+      destinationEl.appendChild(optionC);
+      
+    }
+  }else if(document.querySelector('#destination-country').value === "USA"){
+    var listUsa=["New York","New York John F. Kennedy","Stewart International","Miami International","Los Angeles International","San Francisco International","Boston Logan International"];
+    var listUsaId=["NYCA-sky","JFK-sky","SWF-sky","MIA-sky","LAX-sky","SFO-sky","BOS-sky"];
+    for (i=0;i<8;i++){
+      var optionC = document.createElement('option');
+      optionC.textContent =listUsa[i];
+      optionC.value= listUsaId[i];
+      destinationEl.appendChild(optionC);
+     
+    }
+  }
+  
+}
+
+
+
+
 //function to submit the destination and origin 
 var getInfo = function (event) {
     event.preventDefault();
-    var destinationInput = destinationEl.value.trim();
-    var originInput = locationEl.value.trim();
+ 
     var startDate = startDateEl.value.trim();
-    var endDate = endDateEl.value.trim();
 
-    if (destinationInput && originInput && startDate && endDate) {
-        //var result = getApiDestinationOrigin(destinationInput);
-        //console.log(result);
-        //var destination = result[0].Places.PlaceId;
-        var destination= destinationInput;
-        var origin = originInput;
+    var destination= destinationEl.value;
+    console.log(destination);
+    var origin = document.querySelector('#origin').value;
 
-        //var result2 = getApiDestinationOrigin(originInput);
-        //var origin = result2[0].Places.PlaceId;
-        var destination1= "Sweden";
 
-        repoContainerEl.textContent = '';
-        destinationEl.value = '';
-        locationEl.value='';
-        startDateEl.value = '';
-        endDateEl.value= '';
-    } else if ( destinationInput && !originInput){
-        alert('Please enter a departure country');
-    } else if ( !destinationInput && originInput){
-        alert('Please enter a destination');
-    } else if ( !destinationInput && !originInput){
-        alert('Please enter a departure country and destination');
-    }
+    var destination1= document.querySelector('#destination-country').value;
 
-    getFlightRepos(destination,startDate,endDate,origin);
+    repoContainerEl.textContent = '';
+    startDateEl.value = '';
+  
+    getFlightRepos(destination,startDate,origin);
     getWeather(destination1);
 
     localStorage.setItem("name",nameEl.value);
     localStorage.setItem("phone-number",phoneEl.value);
     localStorage.setItem("email",emailEl.value);
-    localStorage.setItem("origin",originInput);
-    localStorage.setItem("destination",destinationInput);
+    localStorage.setItem("origin",origin);
+    localStorage.setItem("destination",destination);
     localStorage.setItem("searched-on-date",currentDate);
 
 }  
-//function to obtain destination and origin from Skyscanner
-function getApiDestinationOrigin(destination){
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/UK/GBP/en-GB/?query="+location, {
-	"method": "GET",
-	"headers": {
-		"x-rapidapi-key": "2a8ef1057fmsh7bff5369e5a3280p1037e6jsn5276ba1cf138",
-		"x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com"
-	}
-    })
-    .then(function (response) {
-        if (response.ok) {
-          response.json().then(function () {
-          console.log(response) ; 
-          });
-        } else {
-          alert('Error: ' + response.statusText);
-        }
-    })
-    .catch(function (error) {
-        alert('Unable to connect to Skyscanner');
-    });  
-}
- 
+
 
 
 
 
 // function to obtain the API information
-var getFlightRepos = function (destination,startDate,endDate,origin) {
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/"+origin+"/"+destination+"/"+startDate+"?inboundpartialdate="+endDate, {
+var getFlightRepos = function (destination,startDate,origin) {
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/"+origin+"/"+destination+"/"+startDate+"?inboundpartialdate=2022/08/11", {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "2a8ef1057fmsh7bff5369e5a3280p1037e6jsn5276ba1cf138",
@@ -112,7 +147,7 @@ var getFlightRepos = function (destination,startDate,endDate,origin) {
     .then(function (response) {
         if (response.ok) {
           response.json().then(function (data) {
-            displayFlights(data, destination,origin,startDate,endDate);
+            displayFlights(data, destination,origin,startDate);
             console.log(data);
           });
         } else {
@@ -126,13 +161,13 @@ var getFlightRepos = function (destination,startDate,endDate,origin) {
 
 
 
-var displayFlights = function (reposFlights, destination,origin,startDate,endDate) {
+var displayFlights = function (reposFlights, destination,origin,startDate) {
     if (reposFlights.length === 0) {
       repoContainerEl.textContent = 'No flights found.';
       return;
     }
   
-    repoSearchTerm.textContent = ("Flights found to :"+destination+" from:" +origin+" leaving on:"+startDate+ " and reuturning on:"+endDate);
+    repoSearchTerm.textContent = ("Flights found to :"+destination+" from:" +origin+" leaving on:"+startDate);
       
       var repoNameOrigin = reposFlights.Places[0].Name +", "+ reposFlights.Places[0].CityName;
       var repoNameDestination= reposFlights.Places[1].Name+", " + reposFlights.Places[1].CityName;
@@ -272,4 +307,6 @@ recentSearchEl.addEventListener("click",function(){
     }else{
         recentSearchContainer.style.display="none";
     }
-})
+  })
+  
+airportEl.addEventListener("click",getAirports);
