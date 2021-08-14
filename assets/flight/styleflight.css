@@ -1,0 +1,89 @@
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+/* Flight Search Page Styles*/
+.container__FS {
+  margin: 20px;
+  background-color: #000000;
+  opacity: 0.7;
+  height: 890px;
+
+  border-radius: 15px;
+  padding: 8px 40px; /* review padding at the end */
+  
+}
+.float-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+
+h3{
+  color: rgb(30, 146, 146);
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  padding-bottom: 8px;
+  font-size: 35px;
+}
+
+#input-box {
+  width:300px;
+  margin:5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color: rgb(248, 245, 241);
+  font-size: 16px;
+}
+
+
+#selector__FS {
+  color: rgb(248, 245, 241);
+  margin: 8px 200px;
+}
+
+#input-box1 {
+  width:615px;
+  margin:5px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+  background: transparent;
+  color:#fff;
+  font-size: 16px;
+}
+
+.btn__FS {
+  margin: 18px 180px;
+}
+
+#btn-1__FS {
+  height: 40px;
+  width: 135px;
+  padding: 8px;
+  font-size: 20px;
+  background: rgb(30, 146, 146);
+  color:#fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#btn-2__FS {
+  height: 40px;
+  width: 135px;
+  font-size: 20px;
+  background: rgb(189, 86, 3);
+  color:#fff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+footer {
+  background: #26a69a
+}

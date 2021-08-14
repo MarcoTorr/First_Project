@@ -7,6 +7,7 @@ var repoSearchTerm = document.querySelector('#repo-search-term');
 var recentSearchEl = document.querySelector('#recent-search');
 var recentSearchContainer= document.querySelector("#recent-search-container");
 var listRSEl= document.querySelector("#list-rs");
+var submitButton = document.querySelector("#button-form");
 
 var destinationEl = document.querySelector('#destination');
 var originEl = document.querySelector('#origin');
@@ -118,6 +119,7 @@ var getInfo = function (event) {
     repoContainerEl.textContent = '';
     startDateEl.value = '';
   
+  
     getFlightRepos(destination,startDate,origin);
     getWeather(destination1);
 
@@ -136,7 +138,7 @@ var getInfo = function (event) {
 
 // function to obtain the API information
 var getFlightRepos = function (destination,startDate,origin) {
-    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/"+origin+"/"+destination+"/"+startDate+"?inboundpartialdate=2022/08/11", {
+    fetch("https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/USD/en-US/"+origin+"/"+destination+"/"+startDate+"?inboundpartialdate=", {
         "method": "GET",
         "headers": {
             "x-rapidapi-key": "2a8ef1057fmsh7bff5369e5a3280p1037e6jsn5276ba1cf138",
@@ -167,7 +169,7 @@ var displayFlights = function (reposFlights, destination,origin,startDate) {
       return;
     }
   
-    repoSearchTerm.textContent = ("Flights found to :"+destination+" from:" +origin+" leaving on:"+startDate);
+    repoSearchTerm.textContent = ("Flights found to "+destination+" from " +origin+" leaving on: "+startDate);
       
       var repoNameOrigin = reposFlights.Places[0].Name +", "+ reposFlights.Places[0].CityName;
       var repoNameDestination= reposFlights.Places[1].Name+", " + reposFlights.Places[1].CityName;
@@ -181,7 +183,7 @@ var displayFlights = function (reposFlights, destination,origin,startDate) {
 
   
       var titleEl = document.createElement('span');
-      var contentFlights= "Flight leaving from"+" "+ repoNameOrigin +" "+"and landing on "+" "+repoNameDestination+" "+ "for a price of"+" " +repoPrice+" dolars"+".Arline:" +" "+ repoCompany;
+      var contentFlights= "Flight leaving from"+" "+ repoNameOrigin +" "+"and landing on "+" "+repoNameDestination+" "+ "for a price of"+" " +repoPrice+" dolars."+" "+"Airline:" +" "+ repoCompany;
       console.log(contentFlights);
       titleEl.textContent =contentFlights;
       repoEl.appendChild(titleEl);
@@ -294,7 +296,7 @@ function getRecentSearch() {
      
 }
 init()
-userFormEl.addEventListener('submit', getInfo);
+submitButton.addEventListener('click', getInfo);
 recentSearchEl.addEventListener("click",function(){
     var titleRS =document.createElement("h2");
     titleRS.textContent="Recent Searches";

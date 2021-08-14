@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>GoVago - Flight finder</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="styleflight.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+  <body>
+    <nav class="white" role="navigation">
+      <div class="nav-wrapper container">
+        <a id="logo-container" href="../../index.html" class="brand-logo">GoVago - Flight finder</a>
+        <ul class="right hide-on-med-and-down">
+
+            <li id="Main">
+                <a href="../../index.html" alt= "back-to-homepage">Home</a></li>
+            </li>
+            <li id="Weather">
+                <a href="../weather/weather.html" alt= "back-to-weather">Weather</a></li>
+            </li>
+            <li id="recent-search">
+                <a  href="#unknow_link_for_the_moment" alt= "recent-searches">Recent searches</a></li>
+            </li>
+        </ul>
+
+        <ul id="nav-mobile" class="sidenav">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href=".assets/flight/flight.html">Flights</a></li>
+            <li><a href="./assets/weather/weather.html">Weather</a></li>
+          </ul>
+          <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    
+    </nav>
+    <div id="recent-search-container" style="display:none">
+        <ul id="list-rs"></ul>
+    </div>
+    <div class="float-container">
+        <div class="float-child">
+            <div class="container__FS" id="user-form" >
+
+                <h3 class="h3__title">Booking Details</h3>
+
+                <label class="form-label" for="origin">Origin Country:</label>
+                <select id="origin-country" style="display: block">
+                    <option value="Mexico">Mexico</option>
+                    <option value="Canada">Canada</option>
+                    <option value="USA">United States of America</option>
+                </select>
+                <label class="form-label" for="origin">Destination Country:</label>
+                <select id="destination-country" style="display:block">
+                    <option value="Mexico">Mexico</option>
+                    <option value="Canada">Canada</option>
+                    <option value="USA">United States of America</option>
+                </select>
+                <button class="btn__FS" id="airport">Find airports</button>
+                <br>
+                <label class="form-label" for="origin">Origin:</label>
+                <select id="origin" style="display:block"></select>
+                <label class="form-label" for="destination">Destination:</label>
+                <select id="destination" style="display:block"></select>
+                <label class="form-label" for="startDate">From:</label>
+                <input name="startDate" id="startDate" type="date" autofocus="true" class="form-input " style="color:aliceblue "/>
+                
+                <h3>Personal Details</h3>
+                <input type="text" id="name" placeholder="Full Name" style="color:aliceblue">
+                <input type="text" id="phone" placeholder="Phone Number" style="color:aliceblue">
+                <input type="text" id="email" placeholder="Email" style="color:aliceblue">
+                <button class="btn__FS" type="submit" id="button-form"class="btn">Find Flights</button>
+        
+            </div>
+        </div>
+        <div class="float-child">   
+            <div id="Flights" class="flights-container">
+                    <h3 class="subtitle"><span id="repo-search-term"></span></h3>
+                    <div id="repos-container" class="list-group"></div>
+            </div>
+            <div id="Weather" class="weather-container">
+                    <div id="Container-weather">
+                    </div>
+            </div>
+        </div>    
+    </div>    
+
+    <footer class="page-footer teal">
+      <div class="container">
+        <div class="row">
+          
+          <div class="col l6 s12">
+            <h5 class="white-text">About us</h5>
+            <p class="grey-text text-lighten-4">Enthusiastic team of four members, applying our new coding skills into our very first project.</p>
+          </div>
+
+          <div class="col l3 s12">
+            <h5 class="white-text">Navigation</h5>
+            <ul>
+              <li><a class="white-text" href="../../index.html" alt= "back-to-homepage">Home</a></li>
+              <li><a class="white-text" href="../weather/weather.html" alt= "back-to-weather">Weather</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-copyright">
+        <div class="container">
+            Page created with friendship by <a class="brown-text text-lighten-3" href="https://github.com/MarcoTorr/First_Project">THE BLUE TEAM</a>
+            </div>
+      </div>
+
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./scriptflight.js"></script>    
+  </body>
+</html>

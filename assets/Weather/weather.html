@@ -6,15 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Forecast</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style2.css" >
+    <link rel="stylesheet" href="../indexAssets/materialize.css" media="screen,projection">
+    <link rel="stylesheet" href="./styleweather.css" media="screen,projection">
 </head>
 <body>
-    <h1 class="header">Weather Dashboard</h1>
+    <nav class="white" role="navigation">
+        <div class="nav-wrapper container">`
+          <a id="logo-container" class="black-text1" href="../../index.html" class="brand-logo">GoVago - Weather</a>
+          <ul class="right hide-on-med-and-down">
+            <li><a class="black-text" href="../../index.html" alt= "back-to-homepage">Home</a></li>
+            <li><a class="black-text" href="../flight/flight.html" alt= "book-a-flight(s)">Flights</a></li>
+          </ul>
+        </div>
+    </nav>      
+        
 
     <div class="body1">
         <div class="card">
             <div class="search">
-                <input type="text" class="search-bar" placeholder="Search city">
+                <input type="text" class="search-bar" placeholder="Search">
                 <button><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="1.5em"
                 width="1.5em" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -27,7 +37,7 @@
                 <h2 class="city">Weather in Denver</h2>
                 <h1 class="temp">51°C</h1>
                 <div class="flex">
-                    <img src="https://openweathermap.org/img/wn/04n.png" class="icon" />
+                    <img src="https://openweathermap.org/img/wn/04n.png" alt="icon" />
                     <div class="description">Cloudy</div>
                 </div>
                 <div class="humidity">Humidity: 60%</div>
@@ -35,8 +45,34 @@
             </div> 
         </div>       
     </div>
+<!-- Footer section will start here -->
+<footer class="page-footer teal">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">About us</h5>
+          <p class="grey-text text-lighten-4"> Enthusiastic team of four members, applying our new coding skills into our very first project.</p>
 
-    <script src="./script2.js" ></script>
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Navigation</h5>
+          <ul>
+            <li><a class="white-text" href="../../index.html">Home</a></li>
+            <li><a class="white-text" href="../flight/flight.html">Flights</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <!-- Team link to the github page where the project is saved -->
+      <div class="container">
+      Page created with friendship by <a class="brown-text text-lighten-3" href="https://github.com/MarcoTorr/First_Project">THE BLUE TEAM</a>
+      </div>
+    </div>
+  </footer>
+
+    <script src="./scriptweather.js"></script>
     
 </body>
 </html>
